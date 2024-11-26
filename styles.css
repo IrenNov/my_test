@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   text-align: center;
 }
@@ -27,6 +27,11 @@ body {
   padding-inline: 15px;
   margin-bottom: 20px;
 }
+thead::after {
+  content: "";
+  display: block;
+  height: 4px; /* высота отступа */
+}
 
 .restaurant-table td {
   text-align: end;
@@ -36,6 +41,7 @@ body {
 }
 
 .restaurant-table th {
+  font-size: 16px;
   font-weight: 400;
   background-color: #f5f5f5;
   text-align: center;
@@ -47,7 +53,7 @@ body {
 .restaurant-table td:nth-child(1) {
   padding: 15px;
   text-align: start;
-  width: 40%;
+  width: 35%;
 }
 /* .restaurant-table tr:nth-child(2) td {
   padding: 10px 20px;
