@@ -38,6 +38,21 @@ fetch("data.json")
     const totalRow = createRow(totalRowObj, true);
     tableBody.appendChild(totalRow);
 
+    const chartRow = document.createElement("tr");
+    chartRow.classList.add("chart-row"); // Для идентификации строки графика
+
+    const chartCell = document.createElement("td");
+    chartCell.colSpan = 4; // Объединяем 4 колонки
+    chartCell.innerHTML = `<div id="chart-container" style="width: 100%; height: 300px;"></div>`;
+
+    chartRow.appendChild(chartCell);
+
+    // Вставляем строку с графиком сразу после текущей строки
+    totalRow.after(chartRow);
+
+    // Рисуем график внутри контейнера
+    drawChart(totalRowObj.category, totalRowObj.values.slice(-7));
+
     ///////       СТРОЧКИ ТАБЛИЦЫ ИЗ ЗНАЧЕНИЙ МАССИВА
 
     //2. проходимся по каждому элементу массива remainingItems и создаем для каждого константу-строку, ее возвращает функция createRow
