@@ -92,12 +92,12 @@ body {
 td:has(.red) {
   background-color: #fde6e6;
 }
-.restaurant-table tr:hover>td {
+#data-table tr:hover td {
   background-color: #d7dcd7;
   cursor: pointer;
 }
 
-.chart-row > td:has(#chart-container){
+#data-table .chart-row > td:has(#chart-container){
   padding: 10px 20px;
   background-color: #ffffff;
   cursor: auto;
